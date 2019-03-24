@@ -1,0 +1,4 @@
+[hosts]
+xx.xx.xx.xx
+[hosts:vars]
+

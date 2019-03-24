@@ -1,0 +1,20 @@
+--- 
+- name: play to give ssh based access to the hosts
+  hosts: hosts 
+  sudo: yes
+  tasks:
+    - name: add user to the hosts
+      block:
+        - user:
+            name: "{{ username }}"
+            password: '$6$NNvlZHI3WH$rtxULblww04Oqp2NtqxKY8aFcbH0YsEl3ZB8B8qyQrN3w7PHKCh.2BjXBbLtJV7288Z.066OWYOoFTKokoarv.'
+        - name: forced change password
+          shell: "chage -d 0 {{ username }}"
+      when: revoke == "false" and revoke is defined
+
+    - name: delete user
+      user:
+        name: "{{ username }}"
+        state: absent
+        remove: yes
+      when: revoke == "true" and revoke is defined
