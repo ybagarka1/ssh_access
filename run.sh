@@ -1,4 +1,5 @@
 #!/bin/bash
+### description: The script will add user with password123 the password needs to be changed after first succesfull login"
 action=$1
 user_name=$2
 export PDSH_RCMD_TYPE=ssh
@@ -26,5 +27,9 @@ then
 elif [[ $action == "revoke" ]]
 then
         revoke_access "$user_name"
+else
+	echo "please select revoke or grant 
+	./run.sh revoke <user_name>
+	./run.sh grant <user_name>"
 fi
 
