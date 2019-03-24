@@ -14,6 +14,6 @@ Usage:
 ./run.sh grant <username> --> to revoke access of the user with user_name.
   
 Server info:
-I am using psd commad to execute across all the hosts. The hosts IP is defined in the a file named 'hosts'. For new server addition the file needs to be updated with the IP only.
+I am using pdsh commad to execute across all the hosts. The hosts IP is defined in the a file named 'hosts'. For new server addition the file needs to be updated with the IP only.
   
   Note:- the user would be created with default password 'password1234'. After successfull login there would be a prompt to change the password i.e the user needs to set the password.
